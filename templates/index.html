@@ -150,13 +150,19 @@
 
     <!-- Main Content -->
     <div class="content">
-        <button class="predict-btn">Predict Sentiment</button>
+        <button class="predict-btn" onclick="redirectToPredict()">Predict Sentiment</button>
     </div>
 
     <!-- Floating circles for animated background -->
     <div class="floating-circle circle-1"></div>
     <div class="floating-circle circle-2"></div>
     <div class="floating-circle circle-3"></div>
+
+    <script>
+        function redirectToPredict() {
+            window.location.href = "/predict";
+        }
+    </script>
 
 </body>
 </html>
