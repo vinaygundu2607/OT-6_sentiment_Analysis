@@ -3,17 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sentiment Analysis</title>
+    <title>ChatGPT Sentiment Analysis</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            height: 100vh;
             background: #121212;
             font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .navbar {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            background: #1e1e1e;
+            padding: 15px 30px;
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            color: #ff4b2b;
+        }
+
+        section {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
             overflow: hidden;
         }
 
@@ -40,6 +73,8 @@
             box-shadow: 0 0 10px rgba(255, 75, 43, 0.5);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             animation: pulse 2s infinite;
+            display: block;
+            margin: 20px auto;
         }
 
         .btn:hover {
@@ -47,15 +82,15 @@
             box-shadow: 0 0 20px rgba(255, 75, 43, 0.7);
         }
 
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
 
         .background-animation {
@@ -82,17 +117,23 @@
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <h1>Sentiment Analysis</h1>
-        <button class="btn" onclick="window.location.href='/predict'">Predict Sentiment</button>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#contact">Contact Us</a>
     </div>
+
+    <section id="home">
+        <div class="container">
+            <h1>ChatGPT Sentiment Analysis</h1>
+            <button class="btn" onclick="window.location.href='/predict'">Predict Sentiment</button>
+        </div>
+    </section>
 
     <div class="background-animation">
         <div class="circle" style="width: 100px; height: 100px; top: 10%; left: 20%;"></div>
         <div class="circle" style="width: 150px; height: 150px; top: 50%; left: 70%;"></div>
         <div class="circle" style="width: 80px; height: 80px; top: 80%; left: 30%;"></div>
     </div>
-
 </body>
 </html>
